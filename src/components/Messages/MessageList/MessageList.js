@@ -7,13 +7,15 @@ class MessageList extends Component {
     const { messages } = this.props
 
     return (
-      <div className="row message read">
-        <div className="col-xs-1">
-          <div className="row">
+      <div>
+        <div className="row message read">
+          <div className="col-xs-1">
+            <div className="row">
+            </div>
           </div>
-        </div>
-        <div className="col-xs-11">
-          {messages.map((message, index) => ( <Message key={ index } message={message} />))}
+          <div className="col-xs-11">
+            {messages.map((message, index) => ( <Message key={ index } message={message} />))}
+          </div>
         </div>
       </div>
     );

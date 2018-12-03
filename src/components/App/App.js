@@ -7,7 +7,9 @@ class App extends Component {
   //constructor to set state to empty array to then be filled with get request
   constructor(){
     super()
-    this.state = { messages: [] }
+    this.state = {
+      messages: []
+    }
   }
 
   //Make a get request to display all messages from collective API
@@ -25,9 +27,15 @@ class App extends Component {
     }
   }
 
+  //delete a a message from collective API by using event handler targeted by the trash icon
+
+
   render() {
     return (
       <div className="App">
+        <div>
+          <h1 className="title">Tyler's Inbox</h1>
+        </div>
         <Toolbar />
         <MessageList messages={this.state.messages}/>
       </div>

@@ -72,3 +72,22 @@ footer.spacer {
 .fa-close {
   cursor: pointer;
 }
+.subject{
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+}
+p{
+  text-align: left;
+  margin-left: 120px;
+  margin-right: 50px;
+  margin-top: 10px;
+  font-family: monospace;
+}
+.title{
+  background-color: #D3D3D3;
+  color: black;
+  font-size: 60px;
+  text-align: center;
+  font-family: fantasy;
+}

@@ -17,8 +17,17 @@ class Message extends Component {
             </div>
           </div>
         </div>
-        <div className="col-xs-11"
-            id={id}>{subject} <br/> {body}
+        <div className="message-contents">
+          <div className="subject" id={id}>
+            <span className="label label-warning">{labels}</span>
+            <span className="label label-warning">{labels}</span>
+            {subject}
+          </div>
+          <p className="body">
+            <li>
+            {body}
+            </li>
+          </p>
         </div>
       </div>
     );
