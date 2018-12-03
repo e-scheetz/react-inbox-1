@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import Message from '../Messages/Message/Message'
 
 class ToolbarAllMessagesSelected extends Component {
   render() {
+        const { messages } = this.props
+
     return (
       <div className="row toolbar">
         <div className="col-md-12">

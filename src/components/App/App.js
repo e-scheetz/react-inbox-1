@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Toolbar from '../Toolbar/Toolbar'
 import MessageList from '../Messages/MessageList/MessageList'
+import Message from '../Messages/Message/Message'
 
 class App extends Component {
   //constructor to set state to empty array to then be filled with get request
@@ -20,15 +21,26 @@ class App extends Component {
       let resJson = await response.json()
       this.setState({
         ...this.state,
-        messages: resJson,
+        messages: resJson.sort((a,b) => {return a.id > b.id})
       })
     }else {
       console.log("i'm a dingus", response);
     }
   }
 
-  //delete a a message from collective API by using event handler targeted by the trash icon
+  //check to see if a message was checked
+  messageChecked = (id) => {
+    const filteredMessages = this.state.messages.filter((message) => (message.id === id))[0]
+    const remainingMessages = this.state.messages.filter((message) => (message.id !== id))
 
+    const newState = [...remainingMessages, filteredMessages].sort((a,b) => {return a.id > b.id})
+
+    this.setState({
+      ...this.state,
+      messages: newState,
+    })
+
+  }
 
   render() {
     return (
@@ -37,7 +49,7 @@ class App extends Component {
           <h1 className="title">Tyler's Inbox</h1>
         </div>
         <Toolbar />
-        <MessageList messages={this.state.messages}/>
+        <MessageList messages={this.state.messages} messageChecked={this.messageChecked.bind(this)}/>
       </div>
     );
   }

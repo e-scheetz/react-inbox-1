@@ -74,14 +74,14 @@ footer.spacer {
 }
 .subject{
   text-align: left;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
 }
 p{
   text-align: left;
   margin-left: 120px;
   margin-right: 50px;
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: monospace;
 }
 .title{
