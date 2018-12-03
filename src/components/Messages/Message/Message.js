@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 
-class MessageUnread extends Component {
+class Message extends Component {
   render() {
+
+    const { message: { subject, read, starred, labels, body, id }} = this.props
+
     return (
-      <div className="row message unread">
+      <div className="row message read">
         <div className="col-xs-1">
           <div className="row">
             <div className="col-xs-2">
@@ -15,13 +18,11 @@ class MessageUnread extends Component {
           </div>
         </div>
         <div className="col-xs-11">
-          <a href="#">
-            Here is some message text that has a bunch of stuff
-          </a>
+            id={id}>{subject} <br/> {body}
         </div>
       </div>
     );
   }
 }
 
-export default MessageUnread;
+export default Message;
