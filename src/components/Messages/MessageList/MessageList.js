@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
+import Message from '../Message/Message'
 
 class MessageList extends Component {
   render() {
+
+    const { messages } = this.props
+
     return (
       <div className="row message read">
         <div className="col-xs-1">
           <div className="row">
-            <div className="col-xs-2">
-              <input type="checkbox" />
-            </div>
-            <div className="col-xs-2">
-              <i className="star fa fa-star-o"></i>
-            </div>
           </div>
         </div>
         <div className="col-xs-11">
-          <a href="#">
-            Here is some message text that has a bunch of stuff
-          </a>
+          {messages.map((message, index) => ( <Message key={ index } message={message} />))}
         </div>
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Toolbar from '../Toolbar/Toolbar'
 import MessageList from '../Messages/MessageList/MessageList'
 
 class App extends Component {
@@ -27,7 +28,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MessageList />
+        <Toolbar />
+        <MessageList messages={this.state.messages}/>
       </div>
     );
   }
